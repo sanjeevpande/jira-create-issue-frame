@@ -1,0 +1,23 @@
+{
+  "name": "jira-create-issue-frame",
+  "version": "1.0.0",
+  "description": "run npm install and node server.js Navigate to http://localhost:3000",
+  "dependencies": {
+    "node-rest-client": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanjeevpande/jira-create-issue-frame.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanjeevpande/jira-create-issue-frame/issues"
+  },
+  "homepage": "https://github.com/sanjeevpande/jira-create-issue-frame#readme"
+}
