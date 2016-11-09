@@ -16,6 +16,10 @@ $(document).ready(function() {
 		tokenCreateIssue();
 	});
 
+	$('#quickCreateIssue').on('click', function(ev) {
+		quickCreateIssue();
+	});
+
 	$('#getLoginDetails').on('click', function(ev) {
 		getLoginDetails();
 	});
@@ -71,6 +75,17 @@ function clientCookieCreateIssue() {
 				$('#createIssueFrame')[0].contentDocument.cookie = cookie + ';domain=.yourzephyr.com;path=/';
 			});
 			$('#createIssueFrame').attr('src', 'http://jiratest.yourzephyr.com:3530/secure/CreateIssueDetails!init.jspa?pid=10000&issuetype=10001&summary=Test_Issue');
+		}
+	});
+}
+
+function quickCreateIssue() {
+	$.ajax({
+		url: '/quickCreateIssue',
+		method: 'GET',
+		success: function(response) {
+			var atl_token = JSON.parse(response).atl_token;
+			$('#createIssueFrame').attr('src', 'http://jiratest.yourzephyr.com:3530/secure/CreateIssueDetails!init.jspa?pid=10000&issuetype=10001&summary=Test_Issue&atl_token=' + atl_token);
 		}
 	});
 }
